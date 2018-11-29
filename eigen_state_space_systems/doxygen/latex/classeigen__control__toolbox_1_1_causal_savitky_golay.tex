@@ -1,0 +1,144 @@
+\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay}{}\section{eigen\+\_\+control\+\_\+toolbox\+:\+:Causal\+Savitky\+Golay Class Reference}
+\label{classeigen__control__toolbox_1_1_causal_savitky_golay}\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+
+
+{\ttfamily \#include $<$eigen\+\_\+sg\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Causal\+Savitky\+Golay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classeigen__control__toolbox_1_1_causal_savitky_golay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Causal\+Savitky\+Golay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classeigen__control__toolbox_1_1_causal_savitky_golay__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_aa5b6f458809b32f7a0917e00b30cdb40}{Causal\+Savitky\+Golay} ()
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_a3c39b268b53253546ba1a6ab3e1e153d}{Causal\+Savitky\+Golay} (const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_a5b12da27b45af4260d4047708c222965}{Causal\+Savitky\+Golay} (const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_a19c0cd9221aa9239165353c1eb7331e7}{compute\+Coeffs} (const unsigned int \&polynomial\+\_\+order, const unsigned int \&window, const unsigned int \&output\+\_\+size)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_a4ccf9e0eb474e04b81537f62ac84c96d}{init\+Causal\+Savitky\+Golay} (const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_causal_savitky_golay_ae9a466e6bd02cc5cc009d449b6720374}{init\+Causal\+Savitky\+Golay} (const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file eigen\+\_\+sg\+\_\+filter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}}
+\index{Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Causal\+Savitky\+Golay()}{CausalSavitkyGolay()}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::\+Causal\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_aa5b6f458809b32f7a0917e00b30cdb40}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_aa5b6f458809b32f7a0917e00b30cdb40}
+
+
+Definition at line 67 of file eigen\+\_\+sg\+\_\+filter.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}}
+\index{Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Causal\+Savitky\+Golay(const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)}{CausalSavitkyGolay(const double &natural_frequency, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::\+Causal\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{natural\+\_\+frequency, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_a3c39b268b53253546ba1a6ab3e1e153d}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_a3c39b268b53253546ba1a6ab3e1e153d}
+
+
+Definition at line 64 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}}
+\index{Causal\+Savitky\+Golay@{Causal\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Causal\+Savitky\+Golay(const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)}{CausalSavitkyGolay(const unsigned int &window, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::\+Causal\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{window, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_a5b12da27b45af4260d4047708c222965}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_a5b12da27b45af4260d4047708c222965}
+
+
+Definition at line 73 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!compute\+Coeffs@{compute\+Coeffs}}
+\index{compute\+Coeffs@{compute\+Coeffs}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{compute\+Coeffs(const unsigned int \&polynomial\+\_\+order, const unsigned int \&window, const unsigned int \&output\+\_\+size)}{computeCoeffs(const unsigned int &polynomial_order, const unsigned int &window, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::compute\+Coeffs (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{window, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_a19c0cd9221aa9239165353c1eb7331e7}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_a19c0cd9221aa9239165353c1eb7331e7}
+
+
+Definition at line 103 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!init\+Causal\+Savitky\+Golay@{init\+Causal\+Savitky\+Golay}}
+\index{init\+Causal\+Savitky\+Golay@{init\+Causal\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{init\+Causal\+Savitky\+Golay(const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)}{initCausalSavitkyGolay(const double &natural_frequency, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::init\+Causal\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{natural\+\_\+frequency, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_a4ccf9e0eb474e04b81537f62ac84c96d}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_a4ccf9e0eb474e04b81537f62ac84c96d}
+
+
+Definition at line 78 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}!init\+Causal\+Savitky\+Golay@{init\+Causal\+Savitky\+Golay}}
+\index{init\+Causal\+Savitky\+Golay@{init\+Causal\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{init\+Causal\+Savitky\+Golay(const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)}{initCausalSavitkyGolay(const unsigned int &window, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Causal\+Savitky\+Golay\+::init\+Causal\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{window, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_causal_savitky_golay_ae9a466e6bd02cc5cc009d449b6720374}{}\label{classeigen__control__toolbox_1_1_causal_savitky_golay_ae9a466e6bd02cc5cc009d449b6720374}
+
+
+Definition at line 95 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__sg__filter_8h}{eigen\+\_\+sg\+\_\+filter.\+h}\item 
+src/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__sg__filter_8cpp}{eigen\+\_\+sg\+\_\+filter.\+cpp}\end{DoxyCompactItemize}

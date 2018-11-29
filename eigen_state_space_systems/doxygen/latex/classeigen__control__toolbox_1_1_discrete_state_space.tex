@@ -1,0 +1,418 @@
+\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space}{}\section{eigen\+\_\+control\+\_\+toolbox\+:\+:Discrete\+State\+Space Class Reference}
+\label{classeigen__control__toolbox_1_1_discrete_state_space}\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+
+
+{\ttfamily \#include $<$eigen\+\_\+state\+\_\+space\+\_\+systems.\+h$>$}
+
+
+
+Inheritance diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Discrete\+State\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classeigen__control__toolbox_1_1_discrete_state_space__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a205064d804989e5d6d00af4d54386b66}{Discrete\+State\+Space} ()
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a67e56fac91f99ded7bd5f252a4a4c241}{Discrete\+State\+Space} (const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)
+\item 
+bool \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_aa6c1fd6786d35dc12b2c4add8799b9e3}{import\+Matrices\+From\+Param} (const ros\+::\+Node\+Handle \&nh, const std\+::\+\_\+\+\_\+cxx11\+::string \&name)
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_af98f9769460769dd5e40328769deb0d1}{get\+A\+Matrix} ()
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a0031698ccb43b578ebf7357d8ddeef9d}{get\+B\+Matrix} ()
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a302df76daf30ffa0f3740292155a67d9}{get\+C\+Matrix} ()
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a760410cc7727d002aa5fa09493e73d84}{get\+D\+Matrix} ()
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a5f558aad3c0df6f779ee9f29a2f0f5c7}{get\+Output} ()
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a48aa4afa8467bc719cfec7b350e555a5}{get\+State} ()
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_af2cf915334b74c04f3eae9405c34d0a9}{get\+Order} ()
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a449fa9b037f7de46c84eb9a3248074c8}{get\+Number\+Of\+Inputs} ()
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a43ef1ca41a2fff19826b1d865c35e368}{get\+Number\+Of\+Outputs} ()
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a822ee5d7d4bebbdf991f95dee1092775}{set\+State} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ state)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_af8e7d1aa7a8315d116e7a5dae24fcab1}{set\+Sampling\+Period} (const double \&sampling\+\_\+period)
+\item 
+double \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a1c8a67c5d72db57da35d4482265ef59b}{get\+Sampling\+Period} ()
+\item 
+virtual void \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a5965984530e7b3b915883d9a287e2d14}{set\+State\+From\+IO} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+outputs)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_af3f95bc7110bc5b9aa920afbe81a54b2}{set\+State\+From\+Last\+IO} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ outputs)
+\item 
+virtual Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_ae58e06527268253cea809554a528fdfe}{update} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)
+\item 
+virtual double \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_afff4d00311c12501f8a72d1312d8c5ef}{update} (const double \&input)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a283b4074b1814d3bbc8c9cc8abb58bbe}{set\+Matrices} (const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_af226df79174f11922017e18ebb45e89b}{m\+\_\+order}
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a28d1ee83fe68a634516e4bcf53990954}{m\+\_\+nin}
+\item 
+unsigned int \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a709da4473200de4bfff97932bf3efd64}{m\+\_\+nout}
+\item 
+double \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a2762ef0b3292b24ebef3b7ba24501cc4}{m\+\_\+sampling\+\_\+period}
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_afd14e426784cd7a76ee6e5258e3602b0}{m\+\_\+state}
+\item 
+Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_ae78eb5b248f0780f0c417eafa2b85a6b}{m\+\_\+output}
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a3ced02e4b0aa4d87b9739f452aa208b8}{m\+\_\+A}
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a070fcc68df2ae0b39af3d308a1c5011f}{m\+\_\+B}
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_ac3a719d7d124200b9d67b9df525024bb}{m\+\_\+C}
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a1f3638e25fd3c1fb9187426133a1a6e3}{m\+\_\+D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!Discrete\+State\+Space@{Discrete\+State\+Space}}
+\index{Discrete\+State\+Space@{Discrete\+State\+Space}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{Discrete\+State\+Space()}{DiscreteStateSpace()}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::\+Discrete\+State\+Space (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a205064d804989e5d6d00af4d54386b66}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a205064d804989e5d6d00af4d54386b66}
+
+
+Definition at line 35 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!Discrete\+State\+Space@{Discrete\+State\+Space}}
+\index{Discrete\+State\+Space@{Discrete\+State\+Space}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{Discrete\+State\+Space(const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)}{DiscreteStateSpace(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::\+Discrete\+State\+Space (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{A, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{B, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{C, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{D}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a67e56fac91f99ded7bd5f252a4a4c241}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a67e56fac91f99ded7bd5f252a4a4c241}
+
+
+Definition at line 9 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+A\+Matrix@{get\+A\+Matrix}}
+\index{get\+A\+Matrix@{get\+A\+Matrix}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+A\+Matrix()}{getAMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+A\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_af98f9769460769dd5e40328769deb0d1}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_af98f9769460769dd5e40328769deb0d1}
+
+
+Definition at line 43 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+B\+Matrix@{get\+B\+Matrix}}
+\index{get\+B\+Matrix@{get\+B\+Matrix}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+B\+Matrix()}{getBMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+B\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a0031698ccb43b578ebf7357d8ddeef9d}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a0031698ccb43b578ebf7357d8ddeef9d}
+
+
+Definition at line 44 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+C\+Matrix@{get\+C\+Matrix}}
+\index{get\+C\+Matrix@{get\+C\+Matrix}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+C\+Matrix()}{getCMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+C\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a302df76daf30ffa0f3740292155a67d9}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a302df76daf30ffa0f3740292155a67d9}
+
+
+Definition at line 45 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+D\+Matrix@{get\+D\+Matrix}}
+\index{get\+D\+Matrix@{get\+D\+Matrix}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+D\+Matrix()}{getDMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+D\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a760410cc7727d002aa5fa09493e73d84}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a760410cc7727d002aa5fa09493e73d84}
+
+
+Definition at line 46 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+Number\+Of\+Inputs@{get\+Number\+Of\+Inputs}}
+\index{get\+Number\+Of\+Inputs@{get\+Number\+Of\+Inputs}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+Number\+Of\+Inputs()}{getNumberOfInputs()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+Number\+Of\+Inputs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a449fa9b037f7de46c84eb9a3248074c8}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a449fa9b037f7de46c84eb9a3248074c8}
+
+
+Definition at line 50 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+Number\+Of\+Outputs@{get\+Number\+Of\+Outputs}}
+\index{get\+Number\+Of\+Outputs@{get\+Number\+Of\+Outputs}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+Number\+Of\+Outputs()}{getNumberOfOutputs()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+Number\+Of\+Outputs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a43ef1ca41a2fff19826b1d865c35e368}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a43ef1ca41a2fff19826b1d865c35e368}
+
+
+Definition at line 51 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+Order@{get\+Order}}
+\index{get\+Order@{get\+Order}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+Order()}{getOrder()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_af2cf915334b74c04f3eae9405c34d0a9}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_af2cf915334b74c04f3eae9405c34d0a9}
+
+
+Definition at line 49 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+Output@{get\+Output}}
+\index{get\+Output@{get\+Output}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+Output()}{getOutput()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a5f558aad3c0df6f779ee9f29a2f0f5c7}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a5f558aad3c0df6f779ee9f29a2f0f5c7}
+
+
+Definition at line 47 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+Sampling\+Period@{get\+Sampling\+Period}}
+\index{get\+Sampling\+Period@{get\+Sampling\+Period}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+Sampling\+Period()}{getSamplingPeriod()}}]{\setlength{\rightskip}{0pt plus 5cm}double eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+Sampling\+Period (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a1c8a67c5d72db57da35d4482265ef59b}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a1c8a67c5d72db57da35d4482265ef59b}
+
+
+Definition at line 56 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{get\+State()}{getState()}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a48aa4afa8467bc719cfec7b350e555a5}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a48aa4afa8467bc719cfec7b350e555a5}
+
+
+Definition at line 48 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!import\+Matrices\+From\+Param@{import\+Matrices\+From\+Param}}
+\index{import\+Matrices\+From\+Param@{import\+Matrices\+From\+Param}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{import\+Matrices\+From\+Param(const ros\+::\+Node\+Handle \&nh, const std\+::\+\_\+\+\_\+cxx11\+::string \&name)}{importMatricesFromParam(const ros::NodeHandle &nh, const std::__cxx11::string &name)}}]{\setlength{\rightskip}{0pt plus 5cm}bool eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::import\+Matrices\+From\+Param (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Node\+Handle \&}]{nh, }
+\item[{const std\+::\+\_\+\+\_\+cxx11\+::string \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_aa6c1fd6786d35dc12b2c4add8799b9e3}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_aa6c1fd6786d35dc12b2c4add8799b9e3}
+
+
+Definition at line 121 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!set\+Matrices@{set\+Matrices}}
+\index{set\+Matrices@{set\+Matrices}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{set\+Matrices(const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)}{setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::set\+Matrices (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{A, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{B, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{C, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a283b4074b1814d3bbc8c9cc8abb58bbe}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a283b4074b1814d3bbc8c9cc8abb58bbe}
+
+
+Reimplemented in \hyperlink{classeigen__control__toolbox_1_1_controller_abcf2a726f7b30f9638ec4c263a94849e}{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}.
+
+
+
+Definition at line 17 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!set\+Sampling\+Period@{set\+Sampling\+Period}}
+\index{set\+Sampling\+Period@{set\+Sampling\+Period}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{set\+Sampling\+Period(const double \&sampling\+\_\+period)}{setSamplingPeriod(const double &sampling_period)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::set\+Sampling\+Period (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{sampling\+\_\+period}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_af8e7d1aa7a8315d116e7a5dae24fcab1}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_af8e7d1aa7a8315d116e7a5dae24fcab1}
+
+
+Definition at line 55 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!set\+State@{set\+State}}
+\index{set\+State@{set\+State}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{set\+State(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ state)}{setState(const Eigen::Ref< Eigen::VectorXd > state)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::set\+State (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{state}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a822ee5d7d4bebbdf991f95dee1092775}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a822ee5d7d4bebbdf991f95dee1092775}
+
+
+Definition at line 60 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!set\+State\+From\+IO@{set\+State\+From\+IO}}
+\index{set\+State\+From\+IO@{set\+State\+From\+IO}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{set\+State\+From\+I\+O(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+outputs)}{setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::set\+State\+From\+IO (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{past\+\_\+inputs, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{past\+\_\+outputs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a5965984530e7b3b915883d9a287e2d14}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a5965984530e7b3b915883d9a287e2d14}
+
+
+Reimplemented in \hyperlink{classeigen__control__toolbox_1_1_fir_filter_acb92ff23942f907f54b2259882b60ac1}{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}.
+
+
+
+Definition at line 67 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!set\+State\+From\+Last\+IO@{set\+State\+From\+Last\+IO}}
+\index{set\+State\+From\+Last\+IO@{set\+State\+From\+Last\+IO}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{set\+State\+From\+Last\+I\+O(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ outputs)}{setStateFromLastIO(const Eigen::Ref< Eigen::VectorXd > inputs, const Eigen::Ref< Eigen::VectorXd > outputs)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::set\+State\+From\+Last\+IO (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{inputs, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{outputs}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_af3f95bc7110bc5b9aa920afbe81a54b2}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_af3f95bc7110bc5b9aa920afbe81a54b2}
+
+
+Definition at line 108 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!update@{update}}
+\index{update@{update}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{update(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)}{update(const Eigen::Ref< Eigen::VectorXd > input)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::update (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_ae58e06527268253cea809554a528fdfe}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_ae58e06527268253cea809554a528fdfe}
+
+
+Reimplemented in \hyperlink{classeigen__control__toolbox_1_1_fir_filter_a1d6d8cf69bc4dc7dfea62e14cf50375c}{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}, and \hyperlink{classeigen__control__toolbox_1_1_controller_a1091bd414788093e7af2fb89f291266a}{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}.
+
+
+
+Definition at line 49 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!update@{update}}
+\index{update@{update}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{update(const double \&input)}{update(const double &input)}}]{\setlength{\rightskip}{0pt plus 5cm}double eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::update (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_afff4d00311c12501f8a72d1312d8c5ef}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_afff4d00311c12501f8a72d1312d8c5ef}
+
+
+Definition at line 149 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+A@{m\+\_\+A}}
+\index{m\+\_\+A@{m\+\_\+A}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+A}{m_A}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+A\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a3ced02e4b0aa4d87b9739f452aa208b8}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a3ced02e4b0aa4d87b9739f452aa208b8}
+
+
+Definition at line 24 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+B@{m\+\_\+B}}
+\index{m\+\_\+B@{m\+\_\+B}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+B}{m_B}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+B\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a070fcc68df2ae0b39af3d308a1c5011f}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a070fcc68df2ae0b39af3d308a1c5011f}
+
+
+Definition at line 25 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+C@{m\+\_\+C}}
+\index{m\+\_\+C@{m\+\_\+C}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+C}{m_C}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+C\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_ac3a719d7d124200b9d67b9df525024bb}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_ac3a719d7d124200b9d67b9df525024bb}
+
+
+Definition at line 26 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+D@{m\+\_\+D}}
+\index{m\+\_\+D@{m\+\_\+D}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+D}{m_D}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+D\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a1f3638e25fd3c1fb9187426133a1a6e3}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a1f3638e25fd3c1fb9187426133a1a6e3}
+
+
+Definition at line 27 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+nin@{m\+\_\+nin}}
+\index{m\+\_\+nin@{m\+\_\+nin}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+nin}{m_nin}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+nin\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a28d1ee83fe68a634516e4bcf53990954}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a28d1ee83fe68a634516e4bcf53990954}
+
+
+Definition at line 17 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+nout@{m\+\_\+nout}}
+\index{m\+\_\+nout@{m\+\_\+nout}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+nout}{m_nout}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+nout\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a709da4473200de4bfff97932bf3efd64}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a709da4473200de4bfff97932bf3efd64}
+
+
+Definition at line 18 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+order@{m\+\_\+order}}
+\index{m\+\_\+order@{m\+\_\+order}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+order}{m_order}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+order\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_af226df79174f11922017e18ebb45e89b}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_af226df79174f11922017e18ebb45e89b}
+
+
+Definition at line 16 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+output@{m\+\_\+output}}
+\index{m\+\_\+output@{m\+\_\+output}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+output}{m_output}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+output\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_ae78eb5b248f0780f0c417eafa2b85a6b}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_ae78eb5b248f0780f0c417eafa2b85a6b}
+
+
+Definition at line 22 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+sampling\+\_\+period@{m\+\_\+sampling\+\_\+period}}
+\index{m\+\_\+sampling\+\_\+period@{m\+\_\+sampling\+\_\+period}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+sampling\+\_\+period}{m_sampling_period}}]{\setlength{\rightskip}{0pt plus 5cm}double eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+sampling\+\_\+period\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_a2762ef0b3292b24ebef3b7ba24501cc4}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_a2762ef0b3292b24ebef3b7ba24501cc4}
+
+
+Definition at line 19 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}!m\+\_\+state@{m\+\_\+state}}
+\index{m\+\_\+state@{m\+\_\+state}!eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space@{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}}
+\subsubsection[{\texorpdfstring{m\+\_\+state}{m_state}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_discrete_state_space_afd14e426784cd7a76ee6e5258e3602b0}{}\label{classeigen__control__toolbox_1_1_discrete_state_space_afd14e426784cd7a76ee6e5258e3602b0}
+
+
+Definition at line 21 of file eigen\+\_\+state\+\_\+space\+\_\+systems.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__state__space__systems_8h}{eigen\+\_\+state\+\_\+space\+\_\+systems.\+h}\item 
+src/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__state__space__systems_8cpp}{eigen\+\_\+state\+\_\+space\+\_\+systems.\+cpp}\end{DoxyCompactItemize}

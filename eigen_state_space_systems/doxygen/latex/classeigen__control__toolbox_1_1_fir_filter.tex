@@ -1,0 +1,123 @@
+\hypertarget{classeigen__control__toolbox_1_1_fir_filter}{}\section{eigen\+\_\+control\+\_\+toolbox\+:\+:Fir\+Filter Class Reference}
+\label{classeigen__control__toolbox_1_1_fir_filter}\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+
+
+{\ttfamily \#include $<$eigen\+\_\+fir\+\_\+filters.\+h$>$}
+
+
+
+Inheritance diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Fir\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classeigen__control__toolbox_1_1_fir_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Fir\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classeigen__control__toolbox_1_1_fir_filter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_fir_filter_a683d5005efb7f4ed7f1e59a9b35f350a}{Fir\+Filter} ()
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_fir_filter_a6867a6ffb9e39fc8c88e9d4089978905}{Fir\+Filter} (Eigen\+::\+Matrix\+Xd coeffs)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_fir_filter_a63e7808ced78b8ca9d24c6109d6d6ad4}{compute\+Matrices} (Eigen\+::\+Matrix\+Xd coeffs)
+\item 
+virtual void \hyperlink{classeigen__control__toolbox_1_1_fir_filter_acb92ff23942f907f54b2259882b60ac1}{set\+State\+From\+IO} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+outputs)
+\item 
+virtual Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_fir_filter_a1d6d8cf69bc4dc7dfea62e14cf50375c}{update} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file eigen\+\_\+fir\+\_\+filters.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}!Fir\+Filter@{Fir\+Filter}}
+\index{Fir\+Filter@{Fir\+Filter}!eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+\subsubsection[{\texorpdfstring{Fir\+Filter()}{FirFilter()}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter\+::\+Fir\+Filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_fir_filter_a683d5005efb7f4ed7f1e59a9b35f350a}{}\label{classeigen__control__toolbox_1_1_fir_filter_a683d5005efb7f4ed7f1e59a9b35f350a}
+
+
+Definition at line 5 of file eigen\+\_\+fir\+\_\+filters.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}!Fir\+Filter@{Fir\+Filter}}
+\index{Fir\+Filter@{Fir\+Filter}!eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+\subsubsection[{\texorpdfstring{Fir\+Filter(\+Eigen\+::\+Matrix\+Xd coeffs)}{FirFilter(Eigen::MatrixXd coeffs)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter\+::\+Fir\+Filter (
+\begin{DoxyParamCaption}
+\item[{Eigen\+::\+Matrix\+Xd}]{coeffs}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_fir_filter_a6867a6ffb9e39fc8c88e9d4089978905}{}\label{classeigen__control__toolbox_1_1_fir_filter_a6867a6ffb9e39fc8c88e9d4089978905}
+
+
+Definition at line 10 of file eigen\+\_\+fir\+\_\+filters.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}!compute\+Matrices@{compute\+Matrices}}
+\index{compute\+Matrices@{compute\+Matrices}!eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+\subsubsection[{\texorpdfstring{compute\+Matrices(\+Eigen\+::\+Matrix\+Xd coeffs)}{computeMatrices(Eigen::MatrixXd coeffs)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter\+::compute\+Matrices (
+\begin{DoxyParamCaption}
+\item[{Eigen\+::\+Matrix\+Xd}]{coeffs}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_fir_filter_a63e7808ced78b8ca9d24c6109d6d6ad4}{}\label{classeigen__control__toolbox_1_1_fir_filter_a63e7808ced78b8ca9d24c6109d6d6ad4}
+
+
+Definition at line 15 of file eigen\+\_\+fir\+\_\+filters.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}!set\+State\+From\+IO@{set\+State\+From\+IO}}
+\index{set\+State\+From\+IO@{set\+State\+From\+IO}!eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+\subsubsection[{\texorpdfstring{set\+State\+From\+I\+O(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+inputs, const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ past\+\_\+outputs)}{setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter\+::set\+State\+From\+IO (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{past\+\_\+inputs, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{past\+\_\+outputs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_fir_filter_acb92ff23942f907f54b2259882b60ac1}{}\label{classeigen__control__toolbox_1_1_fir_filter_acb92ff23942f907f54b2259882b60ac1}
+
+
+Reimplemented from \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a5965984530e7b3b915883d9a287e2d14}{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}.
+
+
+
+Definition at line 48 of file eigen\+\_\+fir\+\_\+filters.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}!update@{update}}
+\index{update@{update}!eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter@{eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter}}
+\subsubsection[{\texorpdfstring{update(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)}{update(const Eigen::Ref< Eigen::VectorXd > input)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Fir\+Filter\+::update (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_fir_filter_a1d6d8cf69bc4dc7dfea62e14cf50375c}{}\label{classeigen__control__toolbox_1_1_fir_filter_a1d6d8cf69bc4dc7dfea62e14cf50375c}
+
+
+Reimplemented from \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_ae58e06527268253cea809554a528fdfe}{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}.
+
+
+
+Definition at line 36 of file eigen\+\_\+fir\+\_\+filters.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__fir__filters_8h}{eigen\+\_\+fir\+\_\+filters.\+h}\item 
+src/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__fir__filters_8cpp}{eigen\+\_\+fir\+\_\+filters.\+cpp}\end{DoxyCompactItemize}

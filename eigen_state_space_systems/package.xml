@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>eigen_state_space_systems</name>
+  <version>0.0.0</version>
+  <description>The eigen_state_space_systems package</description>
+
+  <maintainer email="manuel.beschi@itia.cnr.it">Manuel Beschi</maintainer>
+
+
+  <license>GPLv3</license>
+
+  <url type="website">http://XXXXXXXXXXXXXXXXXXXX/eigen_state_space_systems</url>
+
+  <author email="manuel.beschi@itia.cnr.it">Manuel Beschi</author>
+  <author email="stefano.ghidini@itia.cnr.it">Stefano Ghidini</author>
+  <author email="enrico.villagrossi@itia.cnr.it">Enrico Villagrossi (former author)</author>
+  
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>eigen_matrix_utils</build_depend>
+  
+  <build_export_depend>roscpp</build_export_depend>
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>eigen_matrix_utils</exec_depend>
+  
+
+  <export>
+  </export>
+</package>

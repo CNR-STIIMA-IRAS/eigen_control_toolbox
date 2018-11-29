@@ -1,0 +1,171 @@
+\hypertarget{classeigen__control__toolbox_1_1_controller}{}\section{eigen\+\_\+control\+\_\+toolbox\+:\+:Controller Class Reference}
+\label{classeigen__control__toolbox_1_1_controller}\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+
+
+{\ttfamily \#include $<$eigen\+\_\+controllers.\+h$>$}
+
+
+
+Inheritance diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classeigen__control__toolbox_1_1_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classeigen__control__toolbox_1_1_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_controller_a5e1e2668aa9f0e16940e37e812f90a59}{Controller} ()
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_controller_a5d0cafdfca0fb15b7ba2a1d343f897ac}{Controller} (const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_controller_abcf2a726f7b30f9638ec4c263a94849e}{set\+Matrices} (const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)
+\item 
+virtual void \hyperlink{classeigen__control__toolbox_1_1_controller_a63728f95d5d4ab2984f3deb402e23c1f}{set\+Anti\+Windup\+Matrix} (const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)
+\item 
+bool \hyperlink{classeigen__control__toolbox_1_1_controller_a8e4ba86e84ed04596442811d99a2cd1d}{import\+Matrices\+From\+Param} (const ros\+::\+Node\+Handle \&nh, const std\+::string \&controller\+\_\+name)
+\item 
+virtual Eigen\+::\+Vector\+Xd \hyperlink{classeigen__control__toolbox_1_1_controller_a1091bd414788093e7af2fb89f291266a}{update} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_controller_a42c4e78a4a1b012daeaacd437e2d728e}{antiwindup} (const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ saturated\+\_\+output, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ unsaturated\+\_\+output)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \hyperlink{classeigen__control__toolbox_1_1_controller_a02cc421090f12505dd3f7025ff2dd134}{m\+\_\+\+Baw}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file eigen\+\_\+controllers.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{Controller()}{Controller()}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_controller_a5e1e2668aa9f0e16940e37e812f90a59}{}\label{classeigen__control__toolbox_1_1_controller_a5e1e2668aa9f0e16940e37e812f90a59}
+
+
+Definition at line 19 of file eigen\+\_\+controllers.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{Controller(const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)}{Controller(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::\+Controller (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{A, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{B, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{C, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{D}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_controller_a5d0cafdfca0fb15b7ba2a1d343f897ac}{}\label{classeigen__control__toolbox_1_1_controller_a5d0cafdfca0fb15b7ba2a1d343f897ac}
+
+
+Definition at line 6 of file eigen\+\_\+controllers.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!antiwindup@{antiwindup}}
+\index{antiwindup@{antiwindup}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{antiwindup(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ saturated\+\_\+output, Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ unsaturated\+\_\+output)}{antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::antiwindup (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{saturated\+\_\+output, }
+\item[{Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{unsaturated\+\_\+output}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_controller_a42c4e78a4a1b012daeaacd437e2d728e}{}\label{classeigen__control__toolbox_1_1_controller_a42c4e78a4a1b012daeaacd437e2d728e}
+
+
+Definition at line 80 of file eigen\+\_\+controllers.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!import\+Matrices\+From\+Param@{import\+Matrices\+From\+Param}}
+\index{import\+Matrices\+From\+Param@{import\+Matrices\+From\+Param}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{import\+Matrices\+From\+Param(const ros\+::\+Node\+Handle \&nh, const std\+::string \&controller\+\_\+name)}{importMatricesFromParam(const ros::NodeHandle &nh, const std::string &controller_name)}}]{\setlength{\rightskip}{0pt plus 5cm}bool eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::import\+Matrices\+From\+Param (
+\begin{DoxyParamCaption}
+\item[{const ros\+::\+Node\+Handle \&}]{nh, }
+\item[{const std\+::string \&}]{controller\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_controller_a8e4ba86e84ed04596442811d99a2cd1d}{}\label{classeigen__control__toolbox_1_1_controller_a8e4ba86e84ed04596442811d99a2cd1d}
+
+
+Definition at line 34 of file eigen\+\_\+controllers.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!set\+Anti\+Windup\+Matrix@{set\+Anti\+Windup\+Matrix}}
+\index{set\+Anti\+Windup\+Matrix@{set\+Anti\+Windup\+Matrix}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{set\+Anti\+Windup\+Matrix(const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)}{setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > D)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::set\+Anti\+Windup\+Matrix (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_controller_a63728f95d5d4ab2984f3deb402e23c1f}{}\label{classeigen__control__toolbox_1_1_controller_a63728f95d5d4ab2984f3deb402e23c1f}
+
+
+Definition at line 26 of file eigen\+\_\+controllers.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!set\+Matrices@{set\+Matrices}}
+\index{set\+Matrices@{set\+Matrices}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{set\+Matrices(const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ A, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ B, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ C, const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$ D)}{setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::set\+Matrices (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{A, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{B, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{C, }
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Matrix\+Xd $>$}]{D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_controller_abcf2a726f7b30f9638ec4c263a94849e}{}\label{classeigen__control__toolbox_1_1_controller_abcf2a726f7b30f9638ec4c263a94849e}
+
+
+Reimplemented from \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_a283b4074b1814d3bbc8c9cc8abb58bbe}{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}.
+
+
+
+Definition at line 11 of file eigen\+\_\+controllers.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!update@{update}}
+\index{update@{update}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{update(const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$ input)}{update(const Eigen::Ref< Eigen::VectorXd > input)}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Vector\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::update (
+\begin{DoxyParamCaption}
+\item[{const Eigen\+::\+Ref$<$ Eigen\+::\+Vector\+Xd $>$}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classeigen__control__toolbox_1_1_controller_a1091bd414788093e7af2fb89f291266a}{}\label{classeigen__control__toolbox_1_1_controller_a1091bd414788093e7af2fb89f291266a}
+
+
+Reimplemented from \hyperlink{classeigen__control__toolbox_1_1_discrete_state_space_ae58e06527268253cea809554a528fdfe}{eigen\+\_\+control\+\_\+toolbox\+::\+Discrete\+State\+Space}.
+
+
+
+Definition at line 75 of file eigen\+\_\+controllers.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}!m\+\_\+\+Baw@{m\+\_\+\+Baw}}
+\index{m\+\_\+\+Baw@{m\+\_\+\+Baw}!eigen\+\_\+control\+\_\+toolbox\+::\+Controller@{eigen\+\_\+control\+\_\+toolbox\+::\+Controller}}
+\subsubsection[{\texorpdfstring{m\+\_\+\+Baw}{m_Baw}}]{\setlength{\rightskip}{0pt plus 5cm}Eigen\+::\+Matrix\+Xd eigen\+\_\+control\+\_\+toolbox\+::\+Controller\+::m\+\_\+\+Baw\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_controller_a02cc421090f12505dd3f7025ff2dd134}{}\label{classeigen__control__toolbox_1_1_controller_a02cc421090f12505dd3f7025ff2dd134}
+
+
+Definition at line 11 of file eigen\+\_\+controllers.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__controllers_8h}{eigen\+\_\+controllers.\+h}\item 
+src/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__controllers_8cpp}{eigen\+\_\+controllers.\+cpp}\end{DoxyCompactItemize}

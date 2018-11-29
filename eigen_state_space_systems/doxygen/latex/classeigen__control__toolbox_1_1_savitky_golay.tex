@@ -1,0 +1,144 @@
+\hypertarget{classeigen__control__toolbox_1_1_savitky_golay}{}\section{eigen\+\_\+control\+\_\+toolbox\+:\+:Savitky\+Golay Class Reference}
+\label{classeigen__control__toolbox_1_1_savitky_golay}\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+
+
+{\ttfamily \#include $<$eigen\+\_\+sg\+\_\+filter.\+h$>$}
+
+
+
+Inheritance diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Savitky\+Golay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classeigen__control__toolbox_1_1_savitky_golay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for eigen\+\_\+control\+\_\+toolbox\+:\+:Savitky\+Golay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classeigen__control__toolbox_1_1_savitky_golay__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_savitky_golay_a93b69082ddae291c2d6e12670fe91d68}{Savitky\+Golay} ()
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_savitky_golay_a46eafa63bbe9866f323f2394c72ac998}{Savitky\+Golay} (const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)
+\item 
+\hyperlink{classeigen__control__toolbox_1_1_savitky_golay_acaa769bb795a34c2ec4bd5857e6c0923}{Savitky\+Golay} (const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_savitky_golay_ae1767a408504913880b7c742eb4e4831}{compute\+Coeffs} (const unsigned int \&polynomial\+\_\+order, const unsigned int \&window, const unsigned int \&output\+\_\+size)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_savitky_golay_a499c308c1672cedc332e92116257c673}{init\+Savitky\+Golay} (const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)
+\item 
+void \hyperlink{classeigen__control__toolbox_1_1_savitky_golay_a9b0b89e15d57b7737c01610d1e5e7c4c}{init\+Savitky\+Golay} (const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 9 of file eigen\+\_\+sg\+\_\+filter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!Savitky\+Golay@{Savitky\+Golay}}
+\index{Savitky\+Golay@{Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Savitky\+Golay()}{SavitkyGolay()}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_a93b69082ddae291c2d6e12670fe91d68}{}\label{classeigen__control__toolbox_1_1_savitky_golay_a93b69082ddae291c2d6e12670fe91d68}
+
+
+Definition at line 31 of file eigen\+\_\+sg\+\_\+filter.\+h.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!Savitky\+Golay@{Savitky\+Golay}}
+\index{Savitky\+Golay@{Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Savitky\+Golay(const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)}{SavitkyGolay(const double &natural_frequency, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{natural\+\_\+frequency, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_a46eafa63bbe9866f323f2394c72ac998}{}\label{classeigen__control__toolbox_1_1_savitky_golay_a46eafa63bbe9866f323f2394c72ac998}
+
+
+Definition at line 6 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!Savitky\+Golay@{Savitky\+Golay}}
+\index{Savitky\+Golay@{Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{Savitky\+Golay(const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size)}{SavitkyGolay(const unsigned int &window, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{window, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_acaa769bb795a34c2ec4bd5857e6c0923}{}\label{classeigen__control__toolbox_1_1_savitky_golay_acaa769bb795a34c2ec4bd5857e6c0923}
+
+
+Definition at line 15 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!compute\+Coeffs@{compute\+Coeffs}}
+\index{compute\+Coeffs@{compute\+Coeffs}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{compute\+Coeffs(const unsigned int \&polynomial\+\_\+order, const unsigned int \&window, const unsigned int \&output\+\_\+size)}{computeCoeffs(const unsigned int &polynomial_order, const unsigned int &window, const unsigned int &output_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::compute\+Coeffs (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{window, }
+\item[{const unsigned int \&}]{output\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_ae1767a408504913880b7c742eb4e4831}{}\label{classeigen__control__toolbox_1_1_savitky_golay_ae1767a408504913880b7c742eb4e4831}
+
+
+Definition at line 46 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!init\+Savitky\+Golay@{init\+Savitky\+Golay}}
+\index{init\+Savitky\+Golay@{init\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{init\+Savitky\+Golay(const double \&natural\+\_\+frequency, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)}{initSavitkyGolay(const double &natural_frequency, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::init\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{natural\+\_\+frequency, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_a499c308c1672cedc332e92116257c673}{}\label{classeigen__control__toolbox_1_1_savitky_golay_a499c308c1672cedc332e92116257c673}
+
+
+Definition at line 20 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+\index{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}!init\+Savitky\+Golay@{init\+Savitky\+Golay}}
+\index{init\+Savitky\+Golay@{init\+Savitky\+Golay}!eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay@{eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay}}
+\subsubsection[{\texorpdfstring{init\+Savitky\+Golay(const unsigned int \&window, const double \&sample\+\_\+period, const unsigned int \&polynomial\+\_\+order, const unsigned int \&output\+\_\+size=1)}{initSavitkyGolay(const unsigned int &window, const double &sample_period, const unsigned int &polynomial_order, const unsigned int &output_size=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void eigen\+\_\+control\+\_\+toolbox\+::\+Savitky\+Golay\+::init\+Savitky\+Golay (
+\begin{DoxyParamCaption}
+\item[{const unsigned int \&}]{window, }
+\item[{const double \&}]{sample\+\_\+period, }
+\item[{const unsigned int \&}]{polynomial\+\_\+order, }
+\item[{const unsigned int \&}]{output\+\_\+size = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classeigen__control__toolbox_1_1_savitky_golay_a9b0b89e15d57b7737c01610d1e5e7c4c}{}\label{classeigen__control__toolbox_1_1_savitky_golay_a9b0b89e15d57b7737c01610d1e5e7c4c}
+
+
+Definition at line 37 of file eigen\+\_\+sg\+\_\+filter.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__sg__filter_8h}{eigen\+\_\+sg\+\_\+filter.\+h}\item 
+src/eigen\+\_\+state\+\_\+space\+\_\+systems/\hyperlink{eigen__sg__filter_8cpp}{eigen\+\_\+sg\+\_\+filter.\+cpp}\end{DoxyCompactItemize}
