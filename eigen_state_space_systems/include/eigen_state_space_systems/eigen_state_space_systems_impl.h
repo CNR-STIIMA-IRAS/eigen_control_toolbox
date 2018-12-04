@@ -86,8 +86,8 @@ inline void DiscreteStateSpace::setStateFromIO(const Eigen::Ref< Eigen::VectorXd
    * ......
    * x(n) = A*x(n-1)+B*u(n-1)
    */
-  
-  
+
+
   if (past_inputs.rows() != m_nin*m_order)
     throw std::invalid_argument(("[ DiscreteStateSpace ]  past_inputs has wrong dimenstion: "+std::to_string(past_inputs.rows())+" instead of "+std::to_string(m_nin*m_order)).c_str());
   
