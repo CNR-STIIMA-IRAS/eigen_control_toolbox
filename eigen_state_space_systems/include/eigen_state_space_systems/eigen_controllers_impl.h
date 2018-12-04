@@ -2,17 +2,16 @@
 #define eigen_controller_impl_201811280951
 #include <rosparam_utilities/rosparam_utilities.h>
 
-// #include <eigen_state_space_systems/eigen_controllers.h>
 
 namespace eigen_control_toolbox
 {
 
-Controller::Controller(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
+inline Controller::Controller(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
 {
   Controller::setMatrices(A,B,C,D);
 };
 
-void Controller::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
+inline void Controller::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
 {
   eigen_control_toolbox::DiscreteStateSpace::setMatrices(A, B, C, D);
   
@@ -20,14 +19,14 @@ void Controller::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen:
   m_Baw.setZero();
 }
 
-Controller::Controller()
+inline Controller::Controller()
 {
 
 };
 
 
 
-void Controller::setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > Baw)
+inline void Controller::setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > Baw)
 {
   assert(Baw.rows()==m_order);
   assert(Baw.cols()==m_nout);
@@ -35,7 +34,7 @@ void Controller::setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > Baw)
   m_Baw=Baw;
 }
 
-bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
+inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
   DiscreteStateSpace::importMatricesFromParam(nh,name);
   Eigen::MatrixXd aw_gain;   //antiwindup_gain
@@ -43,7 +42,7 @@ bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::s
   
   if (!eigen_utils::getParam(nh, name+"/antiwindup_gain", aw_gain))
   {
-    ROS_WARN("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
+    ROS_DEBUG("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
     //return false;
     aw_gain.resize(m_nin,m_nout);
     aw_gain.setZero();
@@ -56,7 +55,7 @@ bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::s
   
   if (!rosparam_utilities::getParamVector(nh, name+"/antiwindup_states", aw_states))
   {
-    ROS_WARN("[Controller] cannot find '%s/antiwindup_states' parameter!",name.c_str());
+    ROS_DEBUG("[Controller] cannot find '%s/antiwindup_states' parameter!",name.c_str());
     aw_states.resize(m_order,0);
   }
   if (!aw_states.size()==m_order)
@@ -82,18 +81,18 @@ bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::s
   
 }
 
-Eigen::VectorXd Controller::update(const Eigen::Ref< Eigen::VectorXd > input)
+inline Eigen::VectorXd Controller::update(const Eigen::Ref< Eigen::VectorXd > input)
 {
   return eigen_control_toolbox::DiscreteStateSpace::update(input);
 }
 
-void Controller::antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output)
+inline void Controller::antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output)
 {
   Eigen::VectorXd aw=saturated_output-unsaturated_output;
   m_state+=m_Baw*aw;
 }
 
-double Controller::update(const double& input)
+inline double Controller::update(const double& input)
 {
   assert(m_nin==1);
   Eigen::VectorXd u(1);

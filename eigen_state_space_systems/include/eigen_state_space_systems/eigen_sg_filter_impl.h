@@ -6,7 +6,7 @@
 namespace eigen_control_toolbox
 {
 
-SavitkyGolay::SavitkyGolay( const double& natural_frequency,
+inline SavitkyGolay::SavitkyGolay( const double& natural_frequency,
                             const double& sample_period,
                             const unsigned int& polynomial_order,
                             const unsigned int& output_size
@@ -15,12 +15,12 @@ SavitkyGolay::SavitkyGolay( const double& natural_frequency,
   initSavitkyGolay(natural_frequency,sample_period,polynomial_order,output_size);
 }
 
-SavitkyGolay::SavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline SavitkyGolay::SavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
   initSavitkyGolay(window,sample_period,polynomial_order,output_size);
 }
 
-void SavitkyGolay::initSavitkyGolay(const double& natural_frequency, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline void SavitkyGolay::initSavitkyGolay(const double& natural_frequency, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
   
   assert(sample_period>0);
@@ -37,7 +37,7 @@ void SavitkyGolay::initSavitkyGolay(const double& natural_frequency, const doubl
   computeCoeffs(polynomial_order,window,output_size);
 }
 
-void SavitkyGolay::initSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline void SavitkyGolay::initSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
   assert(window>polynomial_order);
   assert(sample_period>0);
@@ -46,7 +46,7 @@ void SavitkyGolay::initSavitkyGolay(const unsigned int& window, const double& sa
 }
 
 
-void SavitkyGolay::computeCoeffs(const unsigned int& polynomial_order, const unsigned int& window, const unsigned int& output_size)
+inline void SavitkyGolay::computeCoeffs(const unsigned int& polynomial_order, const unsigned int& window, const unsigned int& output_size)
 {
   Eigen::VectorXd time(window);
   unsigned int half_window=(window-1)/2;
@@ -64,7 +64,7 @@ void SavitkyGolay::computeCoeffs(const unsigned int& polynomial_order, const uns
   
 }
 
-CausalSavitkyGolay::CausalSavitkyGolay(const double& natural_frequency,
+inline CausalSavitkyGolay::CausalSavitkyGolay(const double& natural_frequency,
                                        const double& sample_period,
                                        const unsigned int& polynomial_order,
                                        const unsigned int& output_size
@@ -73,12 +73,12 @@ CausalSavitkyGolay::CausalSavitkyGolay(const double& natural_frequency,
   initCausalSavitkyGolay(natural_frequency,sample_period,polynomial_order,output_size);
 }
 
-CausalSavitkyGolay::CausalSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline CausalSavitkyGolay::CausalSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
   initCausalSavitkyGolay(window,sample_period,polynomial_order,output_size);
 }
 
-void CausalSavitkyGolay::initCausalSavitkyGolay(const double& natural_frequency, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline void CausalSavitkyGolay::initCausalSavitkyGolay(const double& natural_frequency, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
 
   assert(sample_period>0);
@@ -95,7 +95,7 @@ void CausalSavitkyGolay::initCausalSavitkyGolay(const double& natural_frequency,
   computeCoeffs(polynomial_order,window,output_size);
 }
 
-void CausalSavitkyGolay::initCausalSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
+inline void CausalSavitkyGolay::initCausalSavitkyGolay(const unsigned int& window, const double& sample_period, const unsigned int& polynomial_order, const unsigned int& output_size)
 {
   assert(window>polynomial_order);
   assert(sample_period>0);
@@ -103,7 +103,7 @@ void CausalSavitkyGolay::initCausalSavitkyGolay(const unsigned int& window, cons
   computeCoeffs(polynomial_order,window,output_size);
 }
 
-void CausalSavitkyGolay::computeCoeffs(const unsigned int& polynomial_order, const unsigned int& window, const unsigned int& output_size)
+inline void CausalSavitkyGolay::computeCoeffs(const unsigned int& polynomial_order, const unsigned int& window, const unsigned int& output_size)
 {
   Eigen::VectorXd time(window);
   for (unsigned int idx=0;idx<window;idx++)

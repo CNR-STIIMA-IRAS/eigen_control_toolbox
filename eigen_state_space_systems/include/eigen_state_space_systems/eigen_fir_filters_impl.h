@@ -5,17 +5,17 @@
 
 namespace eigen_control_toolbox
 {
-FirFilter::FirFilter()
+inline FirFilter::FirFilter()
 {
 
 }
 
-FirFilter::FirFilter(Eigen::MatrixXd coeffs)
+inline FirFilter::FirFilter(Eigen::MatrixXd coeffs)
 {
   computeMatrices(coeffs);
 }
 
-void FirFilter::computeMatrices(Eigen::MatrixXd coeffs)
+inline void FirFilter::computeMatrices(Eigen::MatrixXd coeffs)
 {
   m_order=coeffs.cols();
   m_nout=coeffs.rows();
@@ -36,7 +36,7 @@ void FirFilter::computeMatrices(Eigen::MatrixXd coeffs)
 }
 
 
-Eigen::VectorXd FirFilter::update(const Eigen::Ref< Eigen::VectorXd > input)
+inline Eigen::VectorXd FirFilter::update(const Eigen::Ref< Eigen::VectorXd > input)
 {
   if (input.rows() != m_nin)
     throw std::invalid_argument("[ DiscreteStateSpace ] Matrix input has wrong rows dimension");
@@ -48,7 +48,7 @@ Eigen::VectorXd FirFilter::update(const Eigen::Ref< Eigen::VectorXd > input)
   return m_output;
 }
 
-void FirFilter::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)
+inline void FirFilter::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)
 {
   if (past_inputs.rows() != m_nin*m_order)
     throw std::invalid_argument(("[ DiscreteStateSpace ]  past_inputs has wrong dimenstion: "+std::to_string(past_inputs.rows())+" instead of "+std::to_string(m_nin*m_order)).c_str());

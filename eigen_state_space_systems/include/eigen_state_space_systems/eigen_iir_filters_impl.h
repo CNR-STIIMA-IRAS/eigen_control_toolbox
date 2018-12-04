@@ -8,13 +8,14 @@
 namespace eigen_control_toolbox
 {
   
-FirstOrderLowPass::FirstOrderLowPass()
+inline FirstOrderLowPass::FirstOrderLowPass()
 {
   m_natural_frequency=1;
   m_sampling_period=1;
   computeMatrices(m_natural_frequency, m_sampling_period);
 };
-FirstOrderLowPass::FirstOrderLowPass(const double& natural_frequency, const double& sample_period)
+
+inline FirstOrderLowPass::FirstOrderLowPass(const double& natural_frequency, const double& sample_period)
 {
   m_natural_frequency=natural_frequency;
   m_sampling_period=sample_period;
@@ -22,7 +23,7 @@ FirstOrderLowPass::FirstOrderLowPass(const double& natural_frequency, const doub
 }
 
 
-void FirstOrderLowPass::computeMatrices(const double& natural_frequency, const double& sample_period)
+inline void FirstOrderLowPass::computeMatrices(const double& natural_frequency, const double& sample_period)
 {
   Eigen::MatrixXd A(1,1);
   Eigen::MatrixXd B(1,1);
@@ -46,7 +47,7 @@ void FirstOrderLowPass::computeMatrices(const double& natural_frequency, const d
   setMatrices(A,B,C,D);
 };
 
-bool FirstOrderLowPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool FirstOrderLowPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
 {
   double natural_frequency;
   double sample_period;
@@ -109,19 +110,19 @@ bool FirstOrderLowPass::importMatricesFromParam(const ros::NodeHandle& nh, const
   return true;
 }
 
-FirstOrderHighPass::FirstOrderHighPass()
+inline FirstOrderHighPass::FirstOrderHighPass()
 {
   
 };
 
-FirstOrderHighPass::FirstOrderHighPass(const double& natural_frequency, const double& sample_period)
+inline FirstOrderHighPass::FirstOrderHighPass(const double& natural_frequency, const double& sample_period)
 {
   m_natural_frequency=natural_frequency;
   m_sampling_period=sample_period;
   computeMatrices(natural_frequency,sample_period);
 }
 
-void FirstOrderHighPass::computeMatrices(const double& natural_frequency, const double& sample_period)
+inline void FirstOrderHighPass::computeMatrices(const double& natural_frequency, const double& sample_period)
 {
   Eigen::MatrixXd A(1,1);
   Eigen::MatrixXd B(1,1);
@@ -144,7 +145,7 @@ void FirstOrderHighPass::computeMatrices(const double& natural_frequency, const 
   setMatrices(A,B,C,D);
 };
 
-bool FirstOrderHighPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool FirstOrderHighPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
 {
   double natural_frequency;
   double sample_period;
