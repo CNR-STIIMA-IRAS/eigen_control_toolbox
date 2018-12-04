@@ -9,7 +9,7 @@ namespace eigen_control_toolbox
   
 
   
-DiscreteStateSpace::DiscreteStateSpace( const Eigen::Ref<Eigen::MatrixXd> A, 
+inline DiscreteStateSpace::DiscreteStateSpace( const Eigen::Ref<Eigen::MatrixXd> A, 
                                         const Eigen::Ref<Eigen::MatrixXd> B, 
                                         const Eigen::Ref<Eigen::MatrixXd> C, 
                                         const Eigen::Ref<Eigen::MatrixXd> D)
@@ -17,7 +17,7 @@ DiscreteStateSpace::DiscreteStateSpace( const Eigen::Ref<Eigen::MatrixXd> A,
   setMatrices(A,B,C,D);
 };
 
-void DiscreteStateSpace::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
+inline void DiscreteStateSpace::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D)
 {
   m_A = A;
   m_B = B;
@@ -50,7 +50,7 @@ void DiscreteStateSpace::setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, cons
 }
 
 
-Eigen::VectorXd DiscreteStateSpace::update(const Eigen::Ref<Eigen::VectorXd> input)
+inline Eigen::VectorXd DiscreteStateSpace::update(const Eigen::Ref<Eigen::VectorXd> input)
 {
   if (input.rows() != m_nin)
     throw std::invalid_argument("[ DiscreteStateSpace ] Matrix input has wrong rows dimension");
@@ -60,14 +60,14 @@ Eigen::VectorXd DiscreteStateSpace::update(const Eigen::Ref<Eigen::VectorXd> inp
   return m_output;
 }
 
-void DiscreteStateSpace::setState(const Eigen::Ref< Eigen::VectorXd > state)
+inline void DiscreteStateSpace::setState(const Eigen::Ref< Eigen::VectorXd > state)
 {
   if (state.rows() != m_order)
     throw std::invalid_argument("[ DiscreteStateSpace ] Matrix input has wrong rows dimension");
   m_state=state;
 }
 
-void DiscreteStateSpace::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)
+inline void DiscreteStateSpace::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past_inputs, const Eigen::Ref< Eigen::VectorXd > past_outputs)
 {
   /*
    * 
@@ -86,8 +86,8 @@ void DiscreteStateSpace::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past
    * ......
    * x(n) = A*x(n-1)+B*u(n-1)
    */
-  
-  
+
+
   if (past_inputs.rows() != m_nin*m_order)
     throw std::invalid_argument(("[ DiscreteStateSpace ]  past_inputs has wrong dimenstion: "+std::to_string(past_inputs.rows())+" instead of "+std::to_string(m_nin*m_order)).c_str());
   
@@ -116,7 +116,7 @@ void DiscreteStateSpace::setStateFromIO(const Eigen::Ref< Eigen::VectorXd > past
   
 }
 
-void DiscreteStateSpace::setStateFromLastIO(const Eigen::Ref< Eigen::VectorXd > inputs, const Eigen::Ref< Eigen::VectorXd > outputs)
+inline void DiscreteStateSpace::setStateFromLastIO(const Eigen::Ref< Eigen::VectorXd > inputs, const Eigen::Ref< Eigen::VectorXd > outputs)
 {
   Eigen::VectorXd past_inputs(m_order*m_nin);
   Eigen::VectorXd past_outputs(m_order*m_nout);
@@ -129,7 +129,7 @@ void DiscreteStateSpace::setStateFromLastIO(const Eigen::Ref< Eigen::VectorXd > 
   setStateFromIO(past_inputs,past_outputs);
 }
 
-bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
 {
   Eigen::MatrixXd A,B,C,D;
   if (!eigen_utils::getParam(nh, name+"/A", A))
@@ -157,7 +157,7 @@ bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, cons
 }
 
 
-double DiscreteStateSpace::update(const double& input)
+inline double DiscreteStateSpace::update(const double& input)
 {
   assert(m_nin==1);
   assert(m_nout==1);
@@ -169,7 +169,7 @@ double DiscreteStateSpace::update(const double& input)
   
 }
 
-Eigen::MatrixXd DiscreteStateSpace::computeInputToOutputMatrix()
+inline Eigen::MatrixXd DiscreteStateSpace::computeInputToOutputMatrix()
 {
   
   Eigen::MatrixXd io_matrix(m_nout*m_order,m_nin*m_order);
@@ -191,7 +191,7 @@ Eigen::MatrixXd DiscreteStateSpace::computeInputToOutputMatrix()
   return io_matrix;
 }
 
-Eigen::MatrixXd DiscreteStateSpace::computeObservatibilityMatrix()
+inline Eigen::MatrixXd DiscreteStateSpace::computeObservatibilityMatrix()
 {
   Eigen::MatrixXd obsv(m_nout*m_order,m_order);
   obsv.setZero();
