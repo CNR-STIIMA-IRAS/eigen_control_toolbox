@@ -9,9 +9,9 @@ int main(int argc,char** argv)
   ros::NodeHandle nh;
   srand((unsigned int) time(0));
 
-  unsigned int order=10;
-  unsigned int nin=1;
-  unsigned int nout=1;
+  unsigned int order=10; // system order
+  unsigned int nin=1;    // number of inputs
+  unsigned int nout=1;   // number of outputs
   
   Eigen::MatrixXd A(order,order);
   Eigen::MatrixXd B(order,nin);
@@ -25,23 +25,19 @@ int main(int argc,char** argv)
   
  
   eigen_control_toolbox::DiscreteStateSpace ss(A,B,C,D);
-  Eigen::MatrixXd io_mtx = ss.computeInputToOutputMatrix();
-  ROS_INFO_STREAM("io_mtx=\n"<<io_mtx);
+
   
-  Eigen::MatrixXd obsv_mtx = ss.computeObservatibilityMatrix();
-  ROS_INFO_STREAM("obsv_mtx=\n" << obsv_mtx);
-  
-  Eigen::VectorXd u(order*nin);
-  Eigen::VectorXd y(order*nout);
+  Eigen::VectorXd u(nin);   //input vector
+  Eigen::VectorXd y(nout);  //output vector
   
   u.setRandom();
   y.setRandom();
   
-  ss.setStateFromIO(u,y);
+  ss.setStateFromLastIO(u,y); // initialize initial state value for dumpless startup
   ROS_INFO_STREAM("state:\n"<<ss.getState());
-//   ss.update(u.tail(nin));
-  ROS_INFO_STREAM("output:\n"<<ss.getOutput() << "\ndesired:\n"<<y.tail(nout));
+  ROS_INFO_STREAM("output:\n"<<ss.getOutput() << "\ndesired:\n"<<y);
   
+  y=ss.update(u); // computing one step, updating state and output
   
   eigen_control_toolbox::DiscreteStateSpace ss2;
   if (!ss2.importMatricesFromParam(nh,"ss"))

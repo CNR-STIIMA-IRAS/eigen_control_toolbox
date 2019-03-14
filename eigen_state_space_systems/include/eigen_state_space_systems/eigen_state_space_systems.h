@@ -74,6 +74,15 @@ namespace eigen_control_toolbox
      */
     void setStateFromLastIO(const Eigen::Ref< Eigen::VectorXd > inputs, const Eigen::Ref< Eigen::VectorXd > outputs);
     
+    /*
+     *
+     * void setStateFromLastIO( const double& input,
+     *                          const double& output);
+     *
+     * Compute state from input output for SISO systems, consider past inputs and outputs equal to the last one during a time window large as the state
+     */
+    void setStateFromLastIO(const double& input, const double& output);
+
     
     
         

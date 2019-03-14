@@ -129,6 +129,20 @@ inline void DiscreteStateSpace::setStateFromLastIO(const Eigen::Ref< Eigen::Vect
   setStateFromIO(past_inputs,past_outputs);
 }
 
+inline void DiscreteStateSpace::setStateFromLastIO(const double& input, const double& output)
+{
+  assert(m_nin==1);
+  assert(m_nout==1);
+
+  Eigen::VectorXd u(1);
+  u(0)=input;
+
+  Eigen::VectorXd y(1);
+  y(0)=output;
+
+  setStateFromLastIO(u,y);
+}
+
 inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
 {
   Eigen::MatrixXd A,B,C,D;

@@ -9,4 +9,7 @@ ss:
   - [1, 0]
   D:
   - [0]
-  
+
+filter:
+  frequency: 5 # [Hz]
+  sampling_period: 0.01 # [s]
