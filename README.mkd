@@ -1,0 +1,157 @@
+# eigen_state_space_systems is an Eigen implementation of a discrete state space linear system, including special case like: low- and high-pass first-order filters.
+
+## DiscreteStateSpace is generic discrete state space linear system. 
+
+> x state
+
+> y output
+
+> u input
+
+> k actual step
+
+> y(k)=C*x(k)+D*u(k)
+
+> x(k+1)=A*x(k)+B*u(k)
+
+# BASIC USAGE 
+
+```c+++
+#include <eigen_state_space_systems/eigen_state_space_systems.h>
+```
+
+```c++
+
+  unsigned int order=10; // system order
+  unsigned int nin=1;    // number of inputs
+  unsigned int nout=1;   // number of outputs
+  
+  Eigen::MatrixXd A(order,order);
+  Eigen::MatrixXd B(order,nin);
+  Eigen::MatrixXd C(nout,order);
+  Eigen::MatrixXd D(nout,nin);
+  
+  A.setRandom();
+  B.setRandom();
+  C.setRandom();
+  D.setRandom();
+  
+ 
+  eigen_control_toolbox::DiscreteStateSpace ss(A,B,C,D);
+
+  
+  Eigen::VectorXd u(nin);   //input vector
+  Eigen::VectorXd y(nout);  //output vector
+  
+  u.setRandom();
+  y.setRandom();
+  
+  ss.setStateFromLastIO(u,y); // initialize initial state value for dumpless startup 
+  ROS_INFO_STREAM("state:\n"<<ss.getState());
+  ROS_INFO_STREAM("output:\n"<<ss.getOutput() << "\ndesired:\n"<<y);
+  
+  y=ss.update(u); // computing one step, updating state and output
+```
+
+
+# BASIC USAGE LOADING MATRICES FROM PARAM
+
+```c+++
+#include <eigen_state_space_systems/eigen_state_space_systems.h>
+```
+
+```c++
+
+  unsigned int order=10; // system order
+  unsigned int nin=1;    // number of inputs
+  unsigned int nout=1;   // number of outputs
+  
+  
+ 
+  eigen_control_toolbox::DiscreteStateSpace ss;
+  if (!ss.importMatricesFromParam(nh,"ss")) // reading matrices from ss parameter (see below)
+  {
+    ROS_ERROR("error");
+    return -1;
+  }
+  
+
+  
+  Eigen::VectorXd u(nin);   //input vector
+  Eigen::VectorXd y(nout);  //output vector
+  
+  u.setRandom();
+  y.setRandom();
+  
+  ss.setStateFromLastIO(u,y); // initialize initial state value for dumpless startup 
+  ROS_INFO_STREAM("state:\n"<<ss.getState());
+  ROS_INFO_STREAM("output:\n"<<ss.getOutput() << "\ndesired:\n"<<y);
+  
+  y=ss.update(u); // computing one step, updating state and output
+```
+
+Required parameters:
+```yaml
+ss:
+  A:
+  - [0, 1]
+  - [0, 0]
+  B:
+  - [0]
+  - [1]
+  C:
+  - [1, 0]
+  D:
+  - [0]  
+```
+
+## DiscreteStateSpace is generic discrete state space linear system. 
+
+> x state
+
+# BASIC USAGE 
+
+```c+++
+#include <eigen_state_space_systems/eigen_common_filters.h>
+```
+
+```c++
+
+  double natural_frequency = 500; // [rad/s]
+  double sampling_period=0.001; // s
+  eigen_control_toolbox::FirstOrderLowPass lpf(natural_frequency,sampling_period);
+
+  // initialization
+  double u=0;
+  double y=0;
+  lpf.setStateFromLastIO(u,  y);
+
+  // computing one step
+  u=1;
+  y=lpf.update(u);
+   
+```
+
+# LOAD FROM ROS PARAM
+you can load from param with the command:
+
+```c+++
+eigen_control_toolbox::FirstOrderLowPass lpf;
+lpf.importMatricesFromParam(nh,"/filter"); 
+```
+
+The ROS parameter can be equal to:
+```yaml
+filter:
+  frequency: 5 # [Hz]
+  sampling_period: 0.01 # [s]
+```
+or equal to:
+```yaml
+filter:
+  natural_frequency: 2 # [rad/s]
+  sampling_period: 0.01 # [s]
+```
+_Software License Agreement (BSD License)_    
+_Copyright (c) 2010, National Research Council of Italy, Institute of Intelligent Industrial Technologies and Systems for Advanced Manufacturing_    
+_All rights reserved._
