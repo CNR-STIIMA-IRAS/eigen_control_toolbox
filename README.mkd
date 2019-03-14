@@ -105,9 +105,12 @@ ss:
   - [0]  
 ```
 
-## DiscreteStateSpace is generic discrete state space linear system. 
+## FirstOrderLowPass and FirstOrderHighPass are low-pass and high-pass first-order filters. 
 
-> x state
+> Low-pass filter: discretized version of 1/(tau*s+1)
+
+> High-pass filter: discretized version of tau*s/(tau*s+1)
+
 
 # BASIC USAGE 
 
@@ -119,7 +122,7 @@ ss:
 
   double natural_frequency = 500; // [rad/s]
   double sampling_period=0.001; // s
-  eigen_control_toolbox::FirstOrderLowPass lpf(natural_frequency,sampling_period);
+  eigen_control_toolbox::FirstOrderLowPass lpf(natural_frequency,sampling_period); // the same for FirstOrderHighPass
 
   // initialization
   double u=0;
