@@ -17,11 +17,18 @@ namespace eigen_control_toolbox
     void setMatrices(const Eigen::Ref< Eigen::MatrixXd > A, const Eigen::Ref< Eigen::MatrixXd > B, const Eigen::Ref< Eigen::MatrixXd > C, const Eigen::Ref< Eigen::MatrixXd > D);
     virtual void setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > D);
     
-    bool importMatricesFromParam(const ros::NodeHandle& nh, const std::string& controller_name);
+    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::string& controller_name);
     virtual Eigen::VectorXd update(const Eigen::Ref< Eigen::VectorXd > input);
     virtual double update(const double& input);
     void antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output);
+
+    void setPI(const double& Kp, const double& Ki, const double& sampling_period);
+    bool importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
+
   };  
+
+
+
 }
 
 

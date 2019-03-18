@@ -52,6 +52,14 @@ target_link_libraries(test_filters
                       ${Eigen_LIBRARIES}
 )
 
+
+add_executable(        test_controllers src/test_pid.cpp)
+add_dependencies(      test_controllers ${catkin_EXPORTED_TARGETS})
+target_link_libraries( test_controllers
+#                       ${PROJECT_NAME}
+                      ${catkin_LIBRARIES}
+                      ${Eigen_LIBRARIES}
+)
 # install(TARGETS  ${PROJECT_NAME} test_state_space_matrix test_filters
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}

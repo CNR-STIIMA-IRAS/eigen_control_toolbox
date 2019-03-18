@@ -1,7 +1,7 @@
 #ifndef eigen_controller_impl_201811280951
 #define eigen_controller_impl_201811280951
 #include <rosparam_utilities/rosparam_utilities.h>
-
+#include <eigen_state_space_systems/eigen_controllers.h>
 
 namespace eigen_control_toolbox
 {
@@ -24,8 +24,6 @@ inline Controller::Controller()
 
 };
 
-
-
 inline void Controller::setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > Baw)
 {
   assert(Baw.rows()==m_order);
@@ -43,7 +41,6 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
   if (!eigen_utils::getParam(nh, name+"/antiwindup_gain", aw_gain))
   {
     ROS_DEBUG("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
-    //return false;
     aw_gain.resize(m_nin,m_nout);
     aw_gain.setZero();
   }
@@ -103,5 +100,92 @@ inline double Controller::update(const double& input)
   
 }
 
+
+inline void Controller::setPI(const double &Kp, const double &Ki, const double& sampling_period)
+{
+  Eigen::MatrixXd A(1,1);
+  Eigen::MatrixXd B(1,1);
+  Eigen::MatrixXd C(1,1);
+  Eigen::MatrixXd D(1,1);
+
+  A(0,0)=1.0;
+  B(0,0)=sampling_period;
+  C(1,0)=Ki;
+  D(0,0)=Kp;
+
+
 }
+
+inline bool Controller::importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
+{
+  double Kp=0;
+  if (nh.hasParam(name+"/proportional_gain"))
+  {
+    if (!nh.getParam(name+"/proportional_gain",Kp))
+    {
+      ROS_ERROR("%s/proportional_gain is not a double",name.c_str());
+      return false;
+    }
+    if (Kp<0)
+    {
+      ROS_INFO("%s/proportional_gain is negative, are you sure?",name.c_str());
+      return false;
+    }
+  }
+  else
+  {
+    ROS_ERROR("%s/proportional_gain is not defined",name.c_str());
+    return false;
+  }
+
+  double Ki=0;
+  if (nh.hasParam(name+"/integral_gain"))
+  {
+    if (!nh.getParam(name+"/integral_gain",Ki))
+    {
+      ROS_ERROR("%s/integral_gain is not a double",name.c_str());
+      return false;
+    }
+    if (Ki<0)
+    {
+      ROS_INFO("%s/integral_gain is negative, are you sure?",name.c_str());
+      return false;
+    }
+  }
+  else
+  {
+    ROS_ERROR("%s/integral_gain is not defined",name.c_str());
+    return false;
+  }
+
+  double sample_period;
+
+  if (nh.hasParam(name+"/sample_period"))
+  {
+    if (!nh.getParam(name+"/sample_period",sample_period))
+    {
+      ROS_ERROR("%s/sample_period is not a double",name.c_str());
+      return false;
+    }
+    if (sample_period<0)
+    {
+      ROS_ERROR("%s/sample_period should be positive",name.c_str());
+      return false;
+    }
+  }
+  else
+  {
+    ROS_ERROR("%s/sample_period is not defined",name.c_str());
+    return false;
+  }
+
+  setPI(Kp,Ki,sample_period);
+  return true;
+
+}
+
+}
+
+
+
 #endif
