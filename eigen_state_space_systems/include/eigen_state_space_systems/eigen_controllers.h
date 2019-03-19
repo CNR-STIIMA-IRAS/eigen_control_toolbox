@@ -23,7 +23,7 @@ namespace eigen_control_toolbox
     void antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output);
 
     void setPI(const double& Kp, const double& Ki, const double& sampling_period);
-    bool importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
+    bool importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name);
 
   };  
 

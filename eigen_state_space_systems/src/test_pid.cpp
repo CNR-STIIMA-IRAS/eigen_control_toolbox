@@ -9,7 +9,7 @@ int main(int argc,char** argv)
   ros::NodeHandle nh;
   srand((unsigned int) time(0));
 
-  eigen_control_toolbox::PID p;
-  p.setP();
+//  eigen_control_toolbox::PID p;
+//  p.setP();
   return 0;
 }

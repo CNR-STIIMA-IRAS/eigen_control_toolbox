@@ -119,63 +119,63 @@ inline void Controller::setPI(const double &Kp, const double &Ki, const double& 
 inline bool Controller::importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
 {
   double Kp=0;
-  if (nh.hasParam(name+"/proportional_gain"))
+  if (nh.hasParam(controller_name+"/proportional_gain"))
   {
-    if (!nh.getParam(name+"/proportional_gain",Kp))
+    if (!nh.getParam(controller_name+"/proportional_gain",Kp))
     {
-      ROS_ERROR("%s/proportional_gain is not a double",name.c_str());
+      ROS_ERROR("%s/proportional_gain is not a double",controller_name.c_str());
       return false;
     }
     if (Kp<0)
     {
-      ROS_INFO("%s/proportional_gain is negative, are you sure?",name.c_str());
+      ROS_INFO("%s/proportional_gain is negative, are you sure?",controller_name.c_str());
       return false;
     }
   }
   else
   {
-    ROS_ERROR("%s/proportional_gain is not defined",name.c_str());
+    ROS_ERROR("%s/proportional_gain is not defined",controller_name.c_str());
     return false;
   }
 
   double Ki=0;
-  if (nh.hasParam(name+"/integral_gain"))
+  if (nh.hasParam(controller_name+"/integral_gain"))
   {
-    if (!nh.getParam(name+"/integral_gain",Ki))
+    if (!nh.getParam(controller_name+"/integral_gain",Ki))
     {
-      ROS_ERROR("%s/integral_gain is not a double",name.c_str());
+      ROS_ERROR("%s/integral_gain is not a double",controller_name.c_str());
       return false;
     }
     if (Ki<0)
     {
-      ROS_INFO("%s/integral_gain is negative, are you sure?",name.c_str());
+      ROS_INFO("%s/integral_gain is negative, are you sure?",controller_name.c_str());
       return false;
     }
   }
   else
   {
-    ROS_ERROR("%s/integral_gain is not defined",name.c_str());
+    ROS_ERROR("%s/integral_gain is not defined",controller_name.c_str());
     return false;
   }
 
   double sample_period;
 
-  if (nh.hasParam(name+"/sample_period"))
+  if (nh.hasParam(controller_name+"/sample_period"))
   {
-    if (!nh.getParam(name+"/sample_period",sample_period))
+    if (!nh.getParam(controller_name+"/sample_period",sample_period))
     {
-      ROS_ERROR("%s/sample_period is not a double",name.c_str());
+      ROS_ERROR("%s/sample_period is not a double",controller_name.c_str());
       return false;
     }
     if (sample_period<0)
     {
-      ROS_ERROR("%s/sample_period should be positive",name.c_str());
+      ROS_ERROR("%s/sample_period should be positive",controller_name.c_str());
       return false;
     }
   }
   else
   {
-    ROS_ERROR("%s/sample_period is not defined",name.c_str());
+    ROS_ERROR("%s/sample_period is not defined",controller_name.c_str());
     return false;
   }
 
