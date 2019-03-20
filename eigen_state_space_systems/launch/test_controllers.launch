@@ -1,0 +1,10 @@
+<launch>
+
+    <rosparam command="load" file="$(find eigen_state_space_systems)/config/test.yaml" />
+
+    <node pkg="eigen_state_space_systems"
+          type="test_controllers"
+          name="test_controllers"
+          output="screen"/>
+
+</launch>

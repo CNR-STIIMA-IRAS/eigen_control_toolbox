@@ -43,6 +43,8 @@ inline void DiscreteStateSpace::setMatrices(const Eigen::Ref< Eigen::MatrixXd > 
   if (m_D.cols() != m_nin)
     throw std::invalid_argument("[ DiscreteStateSpace ] Matrix D has wrong cols dimension");
   
+  m_state.resize(m_order);
+  m_state.setZero();
   m_output.resize(m_nout);
   m_output.setZero();
   
@@ -224,7 +226,17 @@ inline Eigen::MatrixXd DiscreteStateSpace::computeObservatibilityMatrix()
   return obsv;
 }
 
+void DiscreteStateSpace::print()
+{
+  ROS_INFO("system with %u inputs, %u states, %u outputs",m_nin,m_order,m_nout);
+  ROS_INFO_STREAM("A:\n"<< m_A);
+  ROS_INFO_STREAM("B:\n"<< m_B);
+  ROS_INFO_STREAM("C:\n"<< m_C);
+  ROS_INFO_STREAM("D:\n"<< m_D);
+  ROS_INFO_STREAM("output:\n"<< m_output);
+  ROS_INFO_STREAM("state:\n"<< m_state);
 
+}
 
 }
 

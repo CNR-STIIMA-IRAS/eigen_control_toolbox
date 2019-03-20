@@ -34,48 +34,85 @@ inline void Controller::setAntiWindupMatrix(const Eigen::Ref< Eigen::MatrixXd > 
 
 inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
-  DiscreteStateSpace::importMatricesFromParam(nh,name);
-  Eigen::MatrixXd aw_gain;   //antiwindup_gain
-  std::vector<double> aw_states; //antiwindup_gain
-  
-  if (!eigen_utils::getParam(nh, name+"/antiwindup_gain", aw_gain))
+  std::string type;
+  if (nh.hasParam(name+"/type"))
   {
-    ROS_DEBUG("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
-    aw_gain.resize(m_nin,m_nout);
-    aw_gain.setZero();
+    if (!nh.getParam(name+"/type",type))
+    {
+      ROS_ERROR("%s/type is not a string",name.c_str());
+      return false;
+    }
   }
-  if ( (!aw_gain.cols()==m_nout) || (!aw_gain.rows()==m_nin))
+  else
   {
-    ROS_WARN("antiwindup_gain size is wrong ([%zu,%zu] instead of [%u,%u]",aw_gain.rows(),aw_gain.cols(),m_nin,m_nout);
-    return false;
-  }
-  
-  if (!rosparam_utilities::getParamVector(nh, name+"/antiwindup_states", aw_states))
-  {
-    ROS_DEBUG("[Controller] cannot find '%s/antiwindup_states' parameter!",name.c_str());
-    aw_states.resize(m_order,0);
-  }
-  if (!aw_states.size()==m_order)
-  {
-    ROS_WARN("antiwindup_states size is wrong (%zu instead of %u",aw_states.size(),m_order);
-    return false;
-  }
-  
-  Eigen::MatrixXd Baw=m_B*aw_gain;  
-  // Baw norder x nout
-  // B  norder x nin
-  // aw_gain nin x nout
-  // Baw=m_B*aw_gain  ===>  (norder x nout) = (norder x nin) x ( nin x nout)
-  
-  
-  for (unsigned int iord=0;iord<m_order;iord++)
-  {
-    if (!aw_states.at(iord))
-      Baw.row(iord).setZero();
+    ROS_DEBUG("%s/type is not defined, using state-space",name.c_str());
+    type="state-space";
   }
 
-  setAntiWindupMatrix(Baw);
-  
+  ROS_FATAL("loading controller %s of type %s",name.c_str(),type.c_str());
+  if (!type.compare("proportional"))
+  {
+    return importProportionalFromParam(nh,name);
+  }
+  else if (!type.compare("PI"))
+  {
+    return importPIFromParam(nh,name);
+  }
+  else if (!type.compare("state-space"))
+  {
+
+    DiscreteStateSpace::importMatricesFromParam(nh,name);
+    Eigen::MatrixXd aw_gain;   //antiwindup_gain
+    std::vector<double> aw_states; //antiwindup_gain
+
+    if (!eigen_utils::getParam(nh, name+"/antiwindup_gain", aw_gain))
+    {
+      ROS_DEBUG("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
+      aw_gain.resize(m_nin,m_nout);
+      aw_gain.setZero();
+    }
+    if ( (!aw_gain.cols()==m_nout) || (!aw_gain.rows()==m_nin))
+    {
+      ROS_WARN("antiwindup_gain size is wrong ([%zu,%zu] instead of [%u,%u]",aw_gain.rows(),aw_gain.cols(),m_nin,m_nout);
+      return false;
+    }
+
+    if (!rosparam_utilities::getParamVector(nh, name+"/antiwindup_states", aw_states))
+    {
+      ROS_DEBUG("[Controller] cannot find '%s/antiwindup_states' parameter!",name.c_str());
+      aw_states.resize(m_order,0);
+    }
+    if (!aw_states.size()==m_order)
+    {
+      ROS_WARN("antiwindup_states size is wrong (%zu instead of %u",aw_states.size(),m_order);
+      return false;
+    }
+
+    Eigen::MatrixXd Baw=m_B*aw_gain;
+    // Baw norder x nout
+    // B  norder x nin
+    // aw_gain nin x nout
+    // Baw=m_B*aw_gain  ===>  (norder x nout) = (norder x nin) x ( nin x nout)
+
+
+    for (unsigned int iord=0;iord<m_order;iord++)
+    {
+      if (!aw_states.at(iord))
+        Baw.row(iord).setZero();
+    }
+
+    setAntiWindupMatrix(Baw);
+    return true;
+  }
+  else if (!type.compare("none"))
+  {
+    setPI(0,0,0);
+  }
+  else
+  {
+    ROS_ERROR("controller type %s does not exist. \nAvailable ones are:\n - proportional,\n - PI,\n - state-space,\n - none",type.c_str());
+    return true;
+  }
 }
 
 inline Eigen::VectorXd Controller::update(const Eigen::Ref< Eigen::VectorXd > input)
@@ -86,6 +123,14 @@ inline Eigen::VectorXd Controller::update(const Eigen::Ref< Eigen::VectorXd > in
 inline void Controller::antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output)
 {
   Eigen::VectorXd aw=saturated_output-unsaturated_output;
+  m_state+=m_Baw*aw;
+}
+
+inline void Controller::antiwindup(const double& saturated_output, const double& unsaturated_output)
+{
+  assert(m_nout==1);
+  Eigen::VectorXd aw(1);
+  aw(0)=saturated_output-unsaturated_output;
   m_state+=m_Baw*aw;
 }
 
@@ -103,20 +148,65 @@ inline double Controller::update(const double& input)
 
 inline void Controller::setPI(const double &Kp, const double &Ki, const double& sampling_period)
 {
-  Eigen::MatrixXd A(1,1);
-  Eigen::MatrixXd B(1,1);
-  Eigen::MatrixXd C(1,1);
-  Eigen::MatrixXd D(1,1);
+  m_A.resize(1,1);
+  m_B.resize(1,1);
+  m_C.resize(1,1);
+  m_D.resize(1,1);
+  m_Baw.resize(1,1);
 
-  A(0,0)=1.0;
-  B(0,0)=sampling_period;
-  C(1,0)=Ki;
-  D(0,0)=Kp;
+  if (Ki==0)
+  {
+    m_A(0,0)=0.0;
+    m_B(0,0)=0;
+    m_Baw(0,0)=0;
+    m_C(0,0)=0;
+    m_D(0,0)=Kp;
+  }
+  else
+  {
+    double Ti_inv=0;
+    if (Kp==0)
+      Ti_inv==1;
+    else
+      Ti_inv=Ki/Kp; //Ki=Kp/Ti -> 1/Ti=Ki/kp
 
+    m_A(0,0)=1.0;
+    m_B(0,0)=sampling_period*Ki;
+    m_Baw(0,0)=sampling_period*Ti_inv;
+    m_C(0,0)=1;
+    m_D(0,0)=Kp;
+
+  }
+  eigen_control_toolbox::DiscreteStateSpace::setMatrices(m_A,m_B,m_C,m_D);
 
 }
 
-inline bool Controller::importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
+inline bool Controller::importProportionalFromParam(const ros::NodeHandle &nh, const std::string &name)
+{
+  double Kp=0;
+  if (nh.hasParam(name+"/proportional_gain"))
+  {
+    if (!nh.getParam(name+"/proportional_gain",Kp))
+    {
+      ROS_ERROR("%s/proportional_gain is not a double",name.c_str());
+      return false;
+    }
+    if (Kp<0)
+    {
+      ROS_INFO("%s/proportional_gain is negative, are you sure?",name.c_str());
+      return false;
+    }
+  }
+  else
+  {
+    ROS_ERROR("%s/proportional_gain is not defined",name.c_str());
+    return false;
+  }
+  setPI(Kp,0,0);
+  return true;
+}
+
+inline bool Controller::importPIFromParam(const ros::NodeHandle &nh, const std::string &name)
 {
   double Kp=0;
   if (nh.hasParam(name+"/proportional_gain"))
@@ -183,6 +273,7 @@ inline bool Controller::importPIDFromParam(const ros::NodeHandle &nh, const std:
   return true;
 
 }
+
 
 }
 

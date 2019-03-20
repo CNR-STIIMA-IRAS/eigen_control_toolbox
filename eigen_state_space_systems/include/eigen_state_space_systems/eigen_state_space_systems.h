@@ -53,6 +53,8 @@ namespace eigen_control_toolbox
     
     void setState(const Eigen::Ref<Eigen::VectorXd> state);
     
+    void print();
+
     void setSamplingPeriod(const double& sampling_period){m_sampling_period=sampling_period;};
     double getSamplingPeriod(){return m_sampling_period;};
     

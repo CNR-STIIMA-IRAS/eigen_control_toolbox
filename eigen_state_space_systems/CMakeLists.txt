@@ -39,7 +39,6 @@ include_directories(
 add_executable(test_state_space_matrix src/test_state_space_matrix.cpp)
 add_dependencies(test_state_space_matrix ${catkin_EXPORTED_TARGETS})
 target_link_libraries(test_state_space_matrix
-#                       ${PROJECT_NAME}
                       ${catkin_LIBRARIES}
                       ${Eigen_LIBRARIES}
 )

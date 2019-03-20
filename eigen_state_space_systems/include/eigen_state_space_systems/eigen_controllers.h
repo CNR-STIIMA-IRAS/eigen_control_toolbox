@@ -21,9 +21,11 @@ namespace eigen_control_toolbox
     virtual Eigen::VectorXd update(const Eigen::Ref< Eigen::VectorXd > input);
     virtual double update(const double& input);
     void antiwindup(const Eigen::Ref< Eigen::VectorXd > saturated_output, Eigen::Ref< Eigen::VectorXd > unsaturated_output);
+    void antiwindup(const double& saturated_output, const double& unsaturated_output);
 
     void setPI(const double& Kp, const double& Ki, const double& sampling_period);
-    bool importPIDFromParam(const ros::NodeHandle &nh, const std::string &controller_name)
+    bool importPIFromParam(const ros::NodeHandle &nh, const std::string& name);
+    bool importProportionalFromParam(const ros::NodeHandle &nh, const std::string &name);
 
   };  
 
