@@ -226,7 +226,7 @@ inline Eigen::MatrixXd DiscreteStateSpace::computeObservatibilityMatrix()
   return obsv;
 }
 
-void DiscreteStateSpace::print()
+inline void DiscreteStateSpace::print()
 {
   ROS_INFO("system with %u inputs, %u states, %u outputs",m_nin,m_order,m_nout);
   ROS_INFO_STREAM("A:\n"<< m_A);
