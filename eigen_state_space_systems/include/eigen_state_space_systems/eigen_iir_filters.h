@@ -22,7 +22,7 @@ namespace eigen_control_toolbox
     FirstOrderLowPass( const double& natural_frequency,
                        const double& sample_period);
     
-    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name);
+    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name);
     double getNaturalFrequency(){return m_natural_frequency;};
     
   };
@@ -39,7 +39,7 @@ namespace eigen_control_toolbox
     FirstOrderHighPass( const double& natural_frequency,
                        const double& sample_period);
     
-    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name);
+    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name);
     double getNaturalFrequency(){return m_natural_frequency;};
   };
   

@@ -39,7 +39,7 @@ namespace eigen_control_toolbox
                         const Eigen::Ref<Eigen::MatrixXd> C, 
                         const Eigen::Ref<Eigen::MatrixXd> D);
     
-    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name);
+    virtual bool importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name);
     
     Eigen::MatrixXd getAMatrix(){return m_A;};
     Eigen::MatrixXd getBMatrix(){return m_B;};

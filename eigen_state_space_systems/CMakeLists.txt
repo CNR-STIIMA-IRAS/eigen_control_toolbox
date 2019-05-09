@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1)
 project(eigen_state_space_systems)
 
-#add_compile_options(-std=c++11 -funroll-loops  -Ofast)
-add_compile_options(-std=c++11)
-# set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp cmake_modules eigen_matrix_utils
 )

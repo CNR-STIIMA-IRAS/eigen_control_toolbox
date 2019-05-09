@@ -166,7 +166,7 @@ inline void Controller::setPI(const double &Kp, const double &Ki, const double& 
   {
     double Ti_inv=0;
     if (Kp==0)
-      Ti_inv==1;
+      Ti_inv=1;
     else
       Ti_inv=Ki/Kp; //Ki=Kp/Ti -> 1/Ti=Ki/kp
 

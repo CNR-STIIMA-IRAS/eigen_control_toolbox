@@ -47,7 +47,7 @@ inline void FirstOrderLowPass::computeMatrices(const double& natural_frequency, 
   setMatrices(A,B,C,D);
 };
 
-inline bool FirstOrderLowPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool FirstOrderLowPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
   double natural_frequency;
   double sample_period;
@@ -145,7 +145,7 @@ inline void FirstOrderHighPass::computeMatrices(const double& natural_frequency,
   setMatrices(A,B,C,D);
 };
 
-inline bool FirstOrderHighPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool FirstOrderHighPass::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
   double natural_frequency;
   double sample_period;

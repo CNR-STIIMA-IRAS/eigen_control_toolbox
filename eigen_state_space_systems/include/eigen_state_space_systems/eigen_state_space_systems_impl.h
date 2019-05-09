@@ -145,7 +145,7 @@ inline void DiscreteStateSpace::setStateFromLastIO(const double& input, const do
   setStateFromLastIO(u,y);
 }
 
-inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::__cxx11::string& name)
+inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
   Eigen::MatrixXd A,B,C,D;
   if (!eigen_utils::getParam(nh, name+"/A", A))
