@@ -102,7 +102,6 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
     }
 
     setAntiWindupMatrix(Baw);
-    return true;
   }
   else if (!type.compare("none"))
   {
@@ -111,8 +110,9 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
   else
   {
     ROS_ERROR("controller type %s does not exist. \nAvailable ones are:\n - proportional,\n - PI,\n - state-space,\n - none",type.c_str());
-    return true;
+	return false;
   }
+  return true;
 }
 
 inline Eigen::VectorXd Controller::update(const Eigen::Ref< Eigen::VectorXd > input)

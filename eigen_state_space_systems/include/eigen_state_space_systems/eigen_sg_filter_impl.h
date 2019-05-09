@@ -107,7 +107,7 @@ inline void CausalSavitkyGolay::computeCoeffs(const unsigned int& polynomial_ord
 {
   Eigen::VectorXd time(window);
   for (unsigned int idx=0;idx<window;idx++)
-    time(idx)=-idx*m_sampling_period;
+    time(idx) = -(idx*m_sampling_period );
   
   Eigen::MatrixXd regr(window,polynomial_order+1);
   for (unsigned int idx=0;idx<(polynomial_order+1);idx++)
