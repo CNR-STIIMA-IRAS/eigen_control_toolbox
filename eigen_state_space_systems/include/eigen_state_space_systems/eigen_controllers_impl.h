@@ -49,7 +49,7 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
     type="state-space";
   }
 
-  ROS_FATAL("loading controller %s of type %s",name.c_str(),type.c_str());
+  ROS_DEBUG("loading controller %s of type %s",name.c_str(),type.c_str());
   if (!type.compare("proportional"))
   {
     return importProportionalFromParam(nh,name);

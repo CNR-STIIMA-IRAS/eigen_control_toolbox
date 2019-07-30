@@ -148,6 +148,36 @@ inline void DiscreteStateSpace::setStateFromLastIO(const double& input, const do
 inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& nh, const std::string& name)
 {
   Eigen::MatrixXd A,B,C,D;
+  std::string type;
+  if (nh.hasParam(name+"/type"))
+  {
+    if (!nh.getParam(name+"/type",type))
+    {
+      ROS_ERROR("%s/type is not a string",name.c_str());
+      return false;
+    }
+  }
+  else
+  {
+    ROS_DEBUG("%s/type is not defined, using state-space",name.c_str());
+    type="state-space";
+  }
+
+  if (!type.compare("unity"))
+  {
+    A.resize(1,1);
+    B.resize(1,1);
+    C.resize(1,1);
+    D.resize(1,1);
+    A.setZero();
+    B.setZero();
+    C.setZero();
+    D(0,0)=1;
+    setMatrices(A,B,C,D);
+
+    return true;
+  }
+
   if (!eigen_utils::getParam(nh, name+"/A", A))
   {
     ROS_ERROR("[DiscreteStateSpace] cannot find '%s/A' parameter!",name.c_str());
