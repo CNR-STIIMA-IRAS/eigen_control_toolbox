@@ -71,7 +71,7 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
       aw_gain.resize(m_nin,m_nout);
       aw_gain.setZero();
     }
-    if ( (!aw_gain.cols()==m_nout) || (!aw_gain.rows()==m_nin))
+    if ( (aw_gain.cols()!=m_nout) || (aw_gain.rows()!=m_nin))
     {
       ROS_WARN("antiwindup_gain size is wrong ([%zu,%zu] instead of [%u,%u]",aw_gain.rows(),aw_gain.cols(),m_nin,m_nout);
       return false;
@@ -82,7 +82,7 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
       ROS_DEBUG("[Controller] cannot find '%s/antiwindup_states' parameter!",name.c_str());
       aw_states.resize(m_order,0);
     }
-    if (!aw_states.size()==m_order)
+    if (aw_states.size()!=m_order)
     {
       ROS_WARN("antiwindup_states size is wrong (%zu instead of %u",aw_states.size(),m_order);
       return false;
