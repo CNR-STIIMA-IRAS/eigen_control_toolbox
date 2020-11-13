@@ -3,3 +3,15 @@ repositories:
         type: git
         url: https://github.com/mikeferguson/code_coverage.git
         version: master
+    rosparam_utilities:
+        type: git
+        uri: https://github.com/CNR-STIIMA-IRAS/rosparam_utilities
+        version: master
+    eigen_utils
+        type: git
+        uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils
+        version: master
+    eigen_control_toolbox:
+        type: 
+        uri: https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox
+        version: master
