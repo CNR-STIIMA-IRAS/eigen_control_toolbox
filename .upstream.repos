@@ -7,7 +7,7 @@ repositories:
         type: git
         uri: https://github.com/CNR-STIIMA-IRAS/rosparam_utilities
         version: master
-    eigen_utils
+    eigen_utils:
         type: git
         uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils
         version: master
