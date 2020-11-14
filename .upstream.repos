@@ -12,6 +12,6 @@ repositories:
         uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils
         version: master
     eigen_control_toolbox:
-        type: 
+        type: git 
         uri: https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox
         version: master
