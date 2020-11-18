@@ -5,13 +5,14 @@ repositories:
         version: master
     rosparam_utilities:
         type: git
-        uri: https://github.com/CNR-STIIMA-IRAS/rosparam_utilities
+        url: https://github.com/CNR-STIIMA-IRAS/rosparam_utilities.git
         version: master
     eigen_utils:
         type: git
-        uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils
-        version: master
+        uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils.git
+        version: nicola-devel
     eigen_control_toolbox:
-        type: git 
-        uri: https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox
+        type: git
+        url: https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox.git
         version: master
+

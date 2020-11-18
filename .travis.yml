@@ -4,7 +4,7 @@ dist: bionic
 
 branches:
   only:
-  - master
+  - nicola-devel
 
 jobs:
   include:
