@@ -14,4 +14,4 @@ repositories:
     eigen_control_toolbox:
         type: git
         url: https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox.git
-        version: master
+        version: nicola
