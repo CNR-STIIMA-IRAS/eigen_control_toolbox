@@ -7,7 +7,7 @@ echo "Generating coverage for eigen_state_space_systems"
 
 ws=~/target_ws
 extend="/opt/ros/$ROS_DISTRO"
-ici_exec_in_workspace "$extend" "$ws" catkin build cnr_logger -v --no-deps --catkin-make-args cnr_logger_coverage_report
+ici_exec_in_workspace "$extend" "$ws" catkin build eigen_state_space_systems -v --no-deps --catkin-make-args coverage_report
 
 echo "Uploading coverage results to codecov.io"
 
