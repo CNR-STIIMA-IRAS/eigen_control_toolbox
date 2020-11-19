@@ -24,7 +24,7 @@
   
   <exec_depend>roscpp</exec_depend>
   <exec_depend>eigen_matrix_utils</exec_depend>
-  <exec_depend>>rostest</exec_depend>>
+  <exec_depend>rostest</exec_depend>>
 
   <export>
   </export>
