@@ -6,10 +6,9 @@
 
   <maintainer email="manuel.beschi@itia.cnr.it">Manuel Beschi</maintainer>
 
+  <license>BSD</license>
 
-  <license>GPLv3</license>
-
-  <url type="website">http://XXXXXXXXXXXXXXXXXXXX/eigen_state_space_systems</url>
+  <url type="website">https://github.com/CNR-STIIMA-IRAS/eigen_control_toolbox</url>
 
   <author email="manuel.beschi@itia.cnr.it">Manuel Beschi</author>
   <author email="stefano.ghidini@itia.cnr.it">Stefano Ghidini</author>
