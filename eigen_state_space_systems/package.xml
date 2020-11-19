@@ -14,18 +14,17 @@
   <author email="manuel.beschi@itia.cnr.it">Manuel Beschi</author>
   <author email="stefano.ghidini@itia.cnr.it">Stefano Ghidini</author>
   <author email="enrico.villagrossi@itia.cnr.it">Enrico Villagrossi (former author)</author>
-  
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>eigen</build_depend>
   <build_depend>eigen_matrix_utils</build_depend>
-  
+  <build_depend>rostest</build_depend>
   <build_export_depend>roscpp</build_export_depend>
   
   <exec_depend>roscpp</exec_depend>
   <exec_depend>eigen_matrix_utils</exec_depend>
-  
+  <exec_depend>>rostest</exec_depend>>
 
   <export>
   </export>
