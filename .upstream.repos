@@ -9,7 +9,7 @@ repositories:
         version: master
     eigen_utils:
         type: git
-        uri: https://github.com/CNR-STIIMA-IRAS/eigen_utils.git
+        url: https://github.com/CNR-STIIMA-IRAS/eigen_utils.git
         version: nicola-devel
     eigen_control_toolbox:
         type: git
