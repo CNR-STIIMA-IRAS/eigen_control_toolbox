@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(catkin REQUIRED COMPONENTS
-  roscpp cmake_modules eigen_matrix_utils
+  roscpp eigen_matrix_utils
 )
 find_package(Eigen3 REQUIRED COMPONENTS Core Dense)
 
