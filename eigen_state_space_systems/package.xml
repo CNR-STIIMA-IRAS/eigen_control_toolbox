@@ -18,6 +18,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
+  <build_depend>eigen</build_depend>
   <build_depend>eigen_matrix_utils</build_depend>
   
   <build_export_depend>roscpp</build_export_depend>
