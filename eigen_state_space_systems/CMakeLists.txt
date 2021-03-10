@@ -5,14 +5,12 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-find_package(catkin REQUIRED COMPONENTS roscpp eigen_matrix_utils)
+find_package(catkin REQUIRED COMPONENTS roscpp eigen_matrix_utils rosparam_utilities)
 find_package(Eigen3 REQUIRED COMPONENTS Core Dense)
 
 catkin_package(
-  INCLUDE_DIRS include
-#   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp eigen_matrix_utils
-  DEPENDS 
+  INCLUDE_DIRS include ${EIGEN3_INCLUDE_DIRS}
+  CATKIN_DEPENDS roscpp eigen_matrix_utils rosparam_utilities
 )
 
 include_directories(

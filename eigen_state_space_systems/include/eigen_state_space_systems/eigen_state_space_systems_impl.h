@@ -1,7 +1,8 @@
 #ifndef   eigen_state_space_systems_impl_201811280956
 #define   eigen_state_space_systems_impl_201811280956
 
-// #include <eigen_state_space_systems/eigen_state_space_systems.h>
+#include <rosparam_utilities/rosparam_utilities.h>
+#include <eigen_state_space_systems/eigen_state_space_systems.h>
 #include <ros/console.h>
 
 namespace eigen_control_toolbox 
@@ -178,22 +179,23 @@ inline bool DiscreteStateSpace::importMatricesFromParam(const ros::NodeHandle& n
     return true;
   }
 
-  if (!eigen_utils::getParam(nh, name+"/A", A))
+  std::string what;
+  if (!rosparam_utilities::getParam(nh, name+"/A", A, what))
   {
     ROS_ERROR("[DiscreteStateSpace] cannot find '%s/A' parameter!",name.c_str());
     return false;
   }
-  if (!eigen_utils::getParam(nh, name+"/B", B))
+  if (!rosparam_utilities::getParam(nh, name+"/B", B, what))
   {
     ROS_ERROR("[DiscreteStateSpace] cannot find '%s/B' parameter!",name.c_str());
     return false;
   }
-  if (!eigen_utils::getParam(nh, name+"/C", C))
+  if (!rosparam_utilities::getParam(nh, name+"/C", C, what))
   {
     ROS_ERROR("[DiscreteStateSpace] cannot find '%s/C' parameter!",name.c_str());
     return false;
   }
-  if (!eigen_utils::getParam(nh, name+"/D", D))
+  if (!rosparam_utilities::getParam(nh, name+"/D", D, what))
   {
     ROS_ERROR("[DiscreteStateSpace] cannot find '%s/D' parameter!",name.c_str());
     return false;
