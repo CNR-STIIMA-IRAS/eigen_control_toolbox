@@ -1,5 +1,6 @@
 #ifndef eigen_controller_impl_201811280951
 #define eigen_controller_impl_201811280951
+
 #include <rosparam_utilities/rosparam_utilities.h>
 #include <eigen_state_space_systems/eigen_controllers.h>
 
@@ -64,8 +65,9 @@ inline bool Controller::importMatricesFromParam(const ros::NodeHandle& nh, const
     DiscreteStateSpace::importMatricesFromParam(nh,name);
     Eigen::MatrixXd aw_gain;   //antiwindup_gain
     std::vector<double> aw_states; //antiwindup_gain
-
-    if (!eigen_utils::getParam(nh, name+"/antiwindup_gain", aw_gain))
+    
+    std::string what;
+    if (!rosparam_utilities::getParam(nh, name+"/antiwindup_gain", aw_gain, what))
     {
       ROS_DEBUG("[Controller] cannot find '%s/antiwindup_gain' parameter!. SET NULL!!!!!",name.c_str());
       aw_gain.resize(m_nin,m_nout);
